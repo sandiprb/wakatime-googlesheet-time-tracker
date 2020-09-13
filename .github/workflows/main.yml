@@ -1,18 +1,22 @@
-name: Loging Data
+name: Log data to google sheet
 
 on:
-  workflow_dispatch:
+  push:
+    branches: master
+
   schedule:
-    - cron: '9 * * * *'
+    - cron: "11 * * * *"
 
 jobs:
-  log-data:
-    name: Fetch data from wakatime & log to google sheet
+  update-gist:
     runs-on: ubuntu-latest
     steps:
-      - uses: sandip/waka-readme@master
-        with:
-          node-version: '12'
+      - uses: actions/checkout@master
+      - name: Install
+        run: npm ci
+      - name: Fetch data from wakatime & log to google sheet
+        run: node ./index.js
+        env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.WAKATIME_API_KEY }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
