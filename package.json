@@ -1,0 +1,19 @@
+{
+  "name": "time-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "date-fns": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "google-spreadsheet": "^3.0.13",
+    "wakatime-client": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
