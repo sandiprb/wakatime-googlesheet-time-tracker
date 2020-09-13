@@ -3,7 +3,7 @@ name: Loging Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '* * * * *'
+    - cron: '9 * * * *'
 
 jobs:
   log-data:
