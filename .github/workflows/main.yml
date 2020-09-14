@@ -8,7 +8,7 @@ on:
     - cron: "30 19 * * *" # 1am IST
 
 jobs:
-  update-gist:
+  log-data:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
